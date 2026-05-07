@@ -3,65 +3,131 @@
 
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Hollow Knight</title>
 
 <style>
+
+body{
+background:#111;
+padding:20px;
+font-family:Arial;
+color:white;
+margin:0;
+}
+
+/* TOPO */
 
 .container{
 display:flex;
 gap:20px;
 align-items:flex-start;
+flex-wrap:wrap;
 }
 
-img{
-width:250px;
+/* CAPA */
+
+.capa{
+width:320px;
 border-radius:15px;
 }
 
+/* TEXO */
+
 .texto{
-color:white;
-font-family:Arial;
+max-width:600px;
 }
+
+.texto h1{
+margin-top:0;
+font-size:35px;
+}
+
+.texto p{
+color:#ccc;
+line-height:1.5;
+}
+
+/* BOTÃO */
 
 .botao{
 display:inline-block;
 margin-top:15px;
 background:white;
 color:black;
-padding:12px 20px;
-border-radius:10px;
+padding:14px 24px;
+border-radius:12px;
 text-decoration:none;
 font-weight:bold;
+transition:0.3s;
 }
 
-body{
-background:#111;
-padding:20px;
+.botao:hover{
+transform:scale(1.05);
+}
+
+/* SCREENSHOTS */
+
+h2{
+margin-top:40px;
+}
+
+.screenshots{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-top:15px;
+}
+
+.screenshots img{
+width:300px;
+border-radius:12px;
+transition:0.3s;
+}
+
+.screenshots img:hover{
+transform:scale(1.03);
 }
 
 </style>
-
 </head>
 
 <body>
 
 <div class="container">
 
-<img src="https://cdn.cloudflare.steamstatic.com/steam/apps/367520/capsule_616x353.jpg">
+<img class="capa"
+src="https://cdn.cloudflare.steamstatic.com/steam/apps/367520/capsule_616x353.jpg">
 
 <div class="texto">
 
 <h1>Hollow Knight</h1>
 
 <p>
-Explore cavernas misteriosas em um incrível metroidvania.
+Explore um vasto reino subterrâneo cheio de mistérios,
+chefes épicos e combate desafiador em um dos melhores
+metroidvanias já feitos.
 </p>
 
-<a class="botao" href="#">
-BAIXAR
+<a class="botao"
+href="#">
+BAIXAR JOGO
 </a>
 
 </div>
+
+</div>
+
+<h2>Screenshots</h2>
+
+<div class="screenshots">
+
+<img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/367520/ss_047a2a914f4c0a79f4e9c4cce8439b6f4f1a6f33.jpg">
+
+<img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/367520/ss_d4b35a8f6c3f0e8c2f0fd5b0f0a5b9b9f8985046.jpg">
+
+<img src="https://shared.cloudflare.steamstatic.com/store_item_assets/steam/apps/367520/ss_3520c748a2a4d8e1f4d06c9387538099b0dff78f.jpg">
 
 </div>
 
