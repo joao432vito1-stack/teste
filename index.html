@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cofre de Jogos</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #020617;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
+  border-bottom: 1px solid #1e293b;
+}
+
+.logo {
+  color: #a855f7;
+  font-weight: bold;
+}
+
+.hero {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero h1 {
+  font-size: 40px;
+}
+
+.hero span {
+  color: #a855f7;
+}
+
+.hero p {
+  color: #94a3b8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+.card {
+  background: #0f172a;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #9333ea;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+.card-content {
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-content p {
+  margin: 0;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🎮 Game Vault</div>
+  <div>Catálogo</div>
+</header>
+
+<section class="hero">
+  <h1><span>Game</span> Vault</h1>
+  <p>Descubra e explore os melhores títulos</p>
+</section>
+
+<section class="grid">
+ 
+  <div class="card" onclick="abrir('https://youtu.be/xsi-vHCRU0E?si=Kh-scly2rSTyU54v')">
+    <img src="https://cdnjs.cloudflare.com/ajax/libs/simple-icons/9.21.0/youtube.svg">
+    <div class="tag">TUTORIAL</div>
+    <div class="card-content">
+      <p>COMO PASSAR DO ENCURTADOR</p>
+      ↗
+    </div>
+  </div>
+
+  <div class="card" onclick="abrir('https://www.mediafire.com/file/3xsdajg8vi52u8u/Hollow_Knight_-_APK_World.apk/file')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/367520/capsule_616x353.jpg">
+    <div class="tag">MetroidVania</div>
+    <div class="card-content">
+      <p>Hollow Kinght</p>
+      ↗
+    </div>
+  </div>
+
+  <div class="card" onclick="abrir('https://4br.me/xfJpFl')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/12120/capsule_616x353.jpg">
+    <div class="tag">open-world</div>
+    <div class="card-content">
+      <p>GTA San Andreas</p>
+      ↗
+    </div>
+  </div>
+
+  <div class="card" onclick="abrir('https://4br.me/WUVtHpx')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/105600/capsule_616x353.jpg">
+    <div class="tag"> RPG e plataforma 2D</div>
+    <div class="card-content">
+      <p>Terraria</p>
+      ↗
+    </div>
+  </div>
+  
+  <div class="card" onclick="abrir('https://4br.me/iFcO')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/774361/capsule_616x353.jpg">
+    <div class="tag"> 2D Metroidvania e souslike</div>
+    <div class="card-content">
+      <p>Blasphemous</p>
+      ↗
+    </div>
+  </div>
+   
+  <div class="card" onclick="abrir('https://4br.me/SCaghfaRT')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/460950/capsule_616x353.jpg">
+    <div class="tag">Ação Frenética 2D</div>
+    <div class="card-content">
+      <p>Katana Zero</p>
+      ↗
+    </div>
+  </div>
+ 
+  <div class="card" onclick="abrir('https://4br.me/roTj6OSlVL')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/264710/capsule_616x353.jpg">
+    <div class="tag">Sobrevivência e Aventura</div>
+    <div class="card-content">
+      <p>Subnautica</p>
+      ↗
+    </div>
+  </div>
+ 
+  <div class="card" onclick="abrir('https://4br.me/Rk31hx')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/588650/capsule_616x353.jpg">
+    <div class="tag">Roguevania</div>
+    <div class="card-content">
+      <p>Dead Cells</p>
+      ↗
+    </div>
+  </div>
+   
+  <div class="card" onclick="abrir('https://4br.me/WN8llCU')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/268910/capsule_616x353.jpg">
+    <div class="tag">Ação e Plataforma 2D</div>
+    <div class="card-content">
+      <p>Cuphead</p>
+      ↗
+    </div>
+  </div>
+   
+  <div class="card" onclick="abrir('https://4br.me/A32mk9GAu')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/391540/capsule_616x353.jpg">
+    <div class="tag">RPG</div>
+    <div class="card-content">
+      <p>Undertale</p>
+      ↗
+    </div>
+  </div>
+     
+  <div class="card" onclick="abrir('https://4br.me/i7L0grHH')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/319510/capsule_616x353.jpg">
+    <div class="tag">Survival Horror</div>
+    <div class="card-content">
+      <p>FNAF 1</p>
+      ↗
+    </div>
+  </div>
+     
+  <div class="card" onclick="abrir('https://4br.me/xkYYjXr')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/332800/capsule_616x353.jpg">
+    <div class="tag">Survival Horror</div>
+    <div class="card-content">
+      <p>FNAF 2</p>
+      ↗
+    </div>
+  </div>
+       
+  <div class="card" onclick="abrir('https://4br.me/1Esrwc')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/354140/capsule_616x353.jpg">
+    <div class="tag">Survival Horror</div>
+    <div class="card-content">
+      <p>FNAF 3</p>
+      ↗
+    </div>
+  </div>
+       
+  <div class="card" onclick="abrir('https://4br.me/n2Qp')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/388090/capsule_616x353.jpg">
+    <div class="tag">Survival Horror</div>
+    <div class="card-content">
+      <p>FNAF 4</p>
+      ↗
+    </div>
+  </div>
+         
+  <div class="card" onclick="abrir('https://4br.me/HysLoD0Rb')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/506610/capsule_616x353.jpg">
+    <div class="tag">Survival Horror</div>
+    <div class="card-content">
+      <p>FNAF Sister Location</p>
+      ↗
+    </div>
+  </div>
+           
+  <div class="card" onclick="abrir('https://4br.me/y4tQWaiLnj')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/738060/capsule_616x353.jpg">
+    <div class="tag">Survival Horror</div>
+    <div class="card-content">
+      <p>FNAF Pizzaria Simulator</p>
+      ↗
+    </div>
+  </div>
+             
+  <div class="card" onclick="abrir('https://4br.me/2sGjCV3x')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/871720/capsule_616x353.jpg">
+    <div class="tag">Survival Horror</div>
+    <div class="card-content">
+      <p>FNAF Ultimate Custom Night</p>
+      ↗
+    </div>
+  </div>
+               
+  <div class="card" onclick="abrir('https://4br.me/hnUU')">
+    <img src="https://cdn.cloudflare.steamstatic.com/steam/apps/113200/capsule_616x353.jpg">
+    <div class="tag"> Ação e Aventura</div>
+    <div class="card-content">
+      <p>The Binding of Isaac</p>
+      ↗
+    </div>
+  </div>
+  
+</section>
+
+<script>
+function abrir(link){
+  window.location.href = link;
+}
+</script>
+
+</body>
+</html>
