@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jogo</title>
+
+<style>
+
+body{
+background:#111827;
+color:white;
+font-family:Arial;
+margin:0;
+padding:20px;
+}
+
+.container{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.capa{
+width:320px;
+border-radius:15px;
+}
+
+.texto{
+max-width:600px;
+}
+
+.texto p{
+color:#cbd5e1;
+line-height:1.6;
+}
+
+.botao{
+display:inline-block;
+margin-top:15px;
+background:#a855f7;
+color:white;
+padding:14px 24px;
+border-radius:12px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.screenshots{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.screenshots img{
+width:300px;
+border-radius:12px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img class="capa" id="capa">
+
+<div class="texto">
+
+<h1 id="titulo"></h1>
+
+<p id="descricao"></p>
+
+<a class="botao" id="download" href="#">
+BAIXAR JOGO
+</a>
+
+</div>
+
+</div>
+
+<h2>Screenshots</h2>
+
+<div class="screenshots">
+
+<img id="print1">
+<img id="print2">
+<img id="print3">
+
+</div>
+
+<script>
+
+const jogos = {
+
+"hollowknight": {
+
+titulo: "Hollow Knight",
+
+descricao:
+"Explore cavernas misteriosas e enfrente chefes épicos em um incrível metroidvania.",
+
+capa:
+"https://cdn.cloudflare.steamstatic.com/steam/apps/367520/capsule_616x353.jpg",
+
+download:
+"https://www.mediafire.com/file/3xsdajg8vi52u8u/Hollow_Knight_-_APK_World.apk/file",
+
+prints: [
+"https://picsum.photos/500/300?1",
+"https://picsum.photos/500/300?2",
+"https://picsum.photos/500/300?3"
+]
+
+},
+
+"gtasa": {
+
+titulo: "GTA San Andreas",
+
+descricao:
+"Explore San Andreas em um dos jogos de mundo aberto mais famosos da história.",
+
+capa:
+"https://cdn.cloudflare.steamstatic.com/steam/apps/12120/capsule_616x353.jpg",
+
+download:
+"https://4br.me/xfJpFl",
+
+prints: [
+"https://picsum.photos/500/300?4",
+"https://picsum.photos/500/300?5",
+"https://picsum.photos/500/300?6"
+]
+
+},
+
+"terraria": {
+
+titulo: "Terraria",
+
+descricao:
+"Sobreviva, construa e explore um enorme mundo 2D cheio de aventuras.",
+
+capa:
+"https://cdn.cloudflare.steamstatic.com/steam/apps/105600/capsule_616x353.jpg",
+
+download:
+"https://4br.me/WUVtHpx",
+
+prints: [
+"https://picsum.photos/500/300?7",
+"https://picsum.photos/500/300?8",
+"https://picsum.photos/500/300?9"
+]
+
+},
+
+"blasphemous": {
+
+titulo: "Blasphemous",
+
+descricao:
+"Metroidvania sombrio com combate intenso e visual marcante.",
+
+capa:
+"https://cdn.cloudflare.steamstatic.com/steam/apps/774361/capsule_616x353.jpg",
+
+download:
+"https://4br.me/iFcO",
+
+prints: [
+"https://picsum.photos/500/300?10",
+"https://picsum.photos/500/300?11",
+"https://picsum.photos/500/300?12"
+]
+
+},
+
+"katanazero": {
+
+titulo: "Katana Zero",
+
+descricao:
+"Ação frenética 2D com combate rápido e história envolvente.",
+
+capa:
+"https://cdn.cloudflare.steamstatic.com/steam/apps/460950/capsule_616x353.jpg",
+
+download:
+"https://4br.me/SCaghfaRT",
+
+prints: [
+"https://picsum.photos/500/300?13",
+"https://picsum.photos/500/300?14",
+"https://picsum.photos/500/300?15"
+]
+
+},
+
+"subnautica": {
+
+titulo: "Subnautica",
+
+descricao:
+"Explore oceanos alienígenas em uma aventura de sobrevivência.",
+
+capa:
+"https://cdn.cloudflare.steamstatic.com/steam/apps/264710/capsule_616x353.jpg",
+
+download:
+"https://4br.me/roTj6OSlVL",
+
+prints: [
+"https://picsum.photos/500/300?16",
+"https://picsum.photos/500/300?17",
+"https://picsum.photos/500/300?18"
+]
+
+},
+
+"deadcells": {
+
+titulo: "Dead Cells",
+
+descricao:
+"Roguevania frenético com combate rápido e exploração intensa.",
+
+capa:
+"https://cdn.cloudflare.steamstatic.com/steam/apps/588650/capsule_616x353.jpg",
+
+download:
+"https://4br.me/Rk31hx",
+
+prints: [
+"https://picsum.photos/500/300?19",
+"https://picsum.photos/500/300?20",
+"https://picsum.photos/500/300?21"
+]
+
+},
+
+"cuphead": {
+
+titulo: "Cuphead",
+
+descricao:
+"Jogo inspirado em desenhos antigos com chefes extremamente difíceis.",
+
+capa:
+"https://cdn.cloudflare.steamstatic.com/steam/apps/268910/capsule_616x353.jpg",
+
+download:
+"https://4br.me/WN8llCU",
+
+prints: [
+"https://picsum.photos/500/300?22",
+"https://picsum.photos/500/300?23",
+"https://picsum.photos/500/300?24"
+]
+
+},
+
+"undertale": {
+
+titulo: "Undertale",
+
+descricao:
+"RPG único com escolhas que afetam toda a jornada.",
+
+capa:
+"https://cdn.cloudflare.steamstatic.com/steam/apps/391540/capsule_616x353.jpg",
+
+download:
+"https://4br.me/A32mk9GAu",
+
+prints: [
+"https://picsum.photos/500/300?25",
+"https://picsum.photos/500/300?26",
+"https://picsum.photos/500/300?27"
+]
+
+}
+
+};
+
+const params = new URLSearchParams(window.location.search);
+const jogo = params.get("id");
+const dados = jogos[jogo];
+
+if(dados){
+
+ document.getElementById("titulo").innerText = dados.titulo;
+ document.getElementById("descricao").innerText = dados.descricao;
+ document.getElementById("capa").src = dados.capa;
+ document.getElementById("download").href = dados.download;
+ document.getElementById("print1").src = dados.prints[0];
+ document.getElementById("print2").src = dados.prints[1];
+ document.getElementById("print3").src = dados.prints[2];
+
+}
+
+</script>
+
+</body>
+</html>
